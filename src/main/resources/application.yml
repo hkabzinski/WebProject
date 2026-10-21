@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: store-api
+  datasource:
+    url: jdbc:h2:mem:store;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+    open-in-view: false
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
+
+store:
+  session:
+    time-to-live: 30m
+  login:
+    max-failed-attempts: 5
+    lock-duration: 15m
+  password-reset:
+    time-to-live: 30m
